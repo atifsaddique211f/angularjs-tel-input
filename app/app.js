@@ -2,17 +2,14 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version',
-  'ngIntlTelInput'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+    'ngRoute',
+    'ngIntlTelInput',
+    'myApp.view1',
+    'myApp.view2',
+    'myApp.version'
+]).config(['$locationProvider', '$routeProvider', 'ngIntlTelInputProvider', function ($locationProvider, $routeProvider, ngIntlTelInputProvider) {
+    $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]).
-config(function (ngIntlTelInputProvider) {
+    $routeProvider.otherwise({redirectTo: '/view1'});
     ngIntlTelInputProvider.set({initialCountry: 'us'});
-});
+}]);
