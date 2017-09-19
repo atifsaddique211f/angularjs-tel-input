@@ -1,3 +1,7 @@
-<p>This is the partial for view 1.</p>
-
-<input type="text" ng-model="model.tel" ng-intl-tel-input>
+<div style="padding: 30px;">
+    <form name="myForm">
+        <input class="form-control" type="text" name="myInput" ng-model="myInput" ng-intl-tel-input>
+    </form>
+    invalid : {{myForm.myInput.$invalid}} <br />
+    empty : {{ myForm.myInput.$viewValue =="" || myForm.myInput.$viewValue ==null}}
+</div>
